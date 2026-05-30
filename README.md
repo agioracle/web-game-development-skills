@@ -23,28 +23,22 @@ Use this Skill when the task involves:
 
 ## Important: Directory Names
 
-This repository contains one actual Skill:
-
-```text
-web-game-development
-```
-
-The Skill entrypoint is:
-
-```text
-web-game-development-skills/web-game-development/SKILL.md
-```
-
-If your Agent supports loading a Skills collection directory, install the outer directory:
+This repository contains one Skill directory:
 
 ```text
 web-game-development-skills/
 ```
 
-If your Agent expects a single Skill directory, install:
+The Skill entrypoint is:
 
 ```text
-web-game-development-skills/web-game-development/
+web-game-development-skills/SKILL.md
+```
+
+The Skill name declared in `SKILL.md` is:
+
+```text
+web-game-development
 ```
 
 ## Repository Structure
@@ -55,36 +49,27 @@ web-game-development-skills/web-game-development/
 ├── README.zh-CN.md
 ├── LICENSE
 └── web-game-development-skills/
-    └── web-game-development/
-        ├── SKILL.md
-        ├── agents/
-        │   └── openai.yaml
-        ├── references/
-        └── scripts/
+    ├── SKILL.md
+    ├── agents/
+    │   └── openai.yaml
+    ├── references/
+    └── scripts/
 ```
 
 | Path | Description |
 | --- | --- |
-| `web-game-development-skills/web-game-development/SKILL.md` | Main Skill entrypoint. Defines when to use the Skill, default tracks, workflow, and output expectations. |
-| `web-game-development-skills/web-game-development/agents/openai.yaml` | Agent display metadata and default prompt configuration. |
-| `web-game-development-skills/web-game-development/references/` | Domain guides for architecture, stack selection, Phaser, Three.js, R3F, UI, assets, and QA. |
-| `web-game-development-skills/web-game-development/scripts/` | Helper scripts for 2D sprite asset processing. |
+| `web-game-development-skills/SKILL.md` | Main Skill entrypoint. Defines when to use the Skill, default tracks, workflow, and output expectations. |
+| `web-game-development-skills/agents/openai.yaml` | Agent display metadata and default prompt configuration. |
+| `web-game-development-skills/references/` | Domain guides for architecture, stack selection, Phaser, Three.js, R3F, UI, assets, and QA. |
+| `web-game-development-skills/scripts/` | Helper scripts for 2D sprite asset processing. |
 | `LICENSE` | MIT License. |
 
 ## Installation
 
-Copy the Skill directory into your Agent skills directory.
-
-Install the collection directory:
+Copy the Skill directory into your Agent skills directory:
 
 ```text
 web-game-development-skills/
-```
-
-Or install the single Skill directory:
-
-```text
-web-game-development-skills/web-game-development/
 ```
 
 Different Agents may use different skills installation paths. Follow the installation instructions of the Agent tool you use.
@@ -108,13 +93,13 @@ python3 -m pip install pillow
 
 | Request shape | Default choice | Primary guide |
 | --- | --- | --- |
-| 2D sprites, tilemaps, top-down games, side-view games, grid tactics, platform action | Phaser + TypeScript + Vite | `web-game-development-skills/web-game-development/references/phaser-2d.md` |
-| 3D / WebGL in a plain TypeScript or Vite project with direct render-loop control | vanilla Three.js | `web-game-development-skills/web-game-development/references/three-webgl.md` |
-| 3D scenes in React, 3D configurators, or UI-heavy 3D applications | React Three Fiber | `web-game-development-skills/web-game-development/references/react-three-fiber.md` |
-| 3D models, textures, compression, LOD, collision, and shipping format | GLB / glTF 2.0 pipeline | `web-game-development-skills/web-game-development/references/asset-pipeline-3d.md` |
-| HUDs, menus, overlays, responsive layout, and frontend visual direction | DOM-over-canvas UI | `web-game-development-skills/web-game-development/references/ui-frontend.md` |
-| 2D sprite generation, animation strips, frame normalization, and previews | Strip-first sprite pipeline | `web-game-development-skills/web-game-development/references/sprite-workflow.md` |
-| Browser playtesting, screenshot review, and issue reporting | Screenshot-based playtest | `web-game-development-skills/web-game-development/references/playtest.md` |
+| 2D sprites, tilemaps, top-down games, side-view games, grid tactics, platform action | Phaser + TypeScript + Vite | `web-game-development-skills/references/phaser-2d.md` |
+| 3D / WebGL in a plain TypeScript or Vite project with direct render-loop control | vanilla Three.js | `web-game-development-skills/references/three-webgl.md` |
+| 3D scenes in React, 3D configurators, or UI-heavy 3D applications | React Three Fiber | `web-game-development-skills/references/react-three-fiber.md` |
+| 3D models, textures, compression, LOD, collision, and shipping format | GLB / glTF 2.0 pipeline | `web-game-development-skills/references/asset-pipeline-3d.md` |
+| HUDs, menus, overlays, responsive layout, and frontend visual direction | DOM-over-canvas UI | `web-game-development-skills/references/ui-frontend.md` |
+| 2D sprite generation, animation strips, frame normalization, and previews | Strip-first sprite pipeline | `web-game-development-skills/references/sprite-workflow.md` |
+| Browser playtesting, screenshot review, and issue reporting | Screenshot-based playtest | `web-game-development-skills/references/playtest.md` |
 
 Default to Phaser for 2D games. Switch to a 3D path only when the user explicitly asks for 3D, Three.js, React Three Fiber, shader-heavy rendering, or a WebGL-first direction. Babylon.js and PlayCanvas can be compared as alternatives, but they are not the default code-generation targets.
 
@@ -124,52 +109,52 @@ Default to Phaser for 2D games. Switch to a 3D path only when the user explicitl
 
 | Document | Contents |
 | --- | --- |
-| `web-game-development-skills/web-game-development/references/foundations.md` | General Web game architecture: simulation/render split, input, assets, save boundaries, and performance boundaries. |
-| `web-game-development-skills/web-game-development/references/engine-selection.md` | Stack selection table. |
-| `web-game-development-skills/web-game-development/references/phaser-architecture.md` | Recommended Phaser module split. |
-| `web-game-development-skills/web-game-development/references/three-webgl-architecture.md` | Recommended Three.js module split. |
+| `web-game-development-skills/references/foundations.md` | General Web game architecture: simulation/render split, input, assets, save boundaries, and performance boundaries. |
+| `web-game-development-skills/references/engine-selection.md` | Stack selection table. |
+| `web-game-development-skills/references/phaser-architecture.md` | Recommended Phaser module split. |
+| `web-game-development-skills/references/three-webgl-architecture.md` | Recommended Three.js module split. |
 
 ### Engines and Runtimes
 
 | Document | Contents |
 | --- | --- |
-| `web-game-development-skills/web-game-development/references/phaser-2d.md` | 2D Phaser implementation guide. |
-| `web-game-development-skills/web-game-development/references/three-webgl.md` | vanilla Three.js / WebGL implementation guide. |
-| `web-game-development-skills/web-game-development/references/react-three-fiber.md` | React Three Fiber implementation guide. |
-| `web-game-development-skills/web-game-development/references/alternative-3d-engines.md` | Comparison of alternative 3D engines such as Babylon.js and PlayCanvas. |
+| `web-game-development-skills/references/phaser-2d.md` | 2D Phaser implementation guide. |
+| `web-game-development-skills/references/three-webgl.md` | vanilla Three.js / WebGL implementation guide. |
+| `web-game-development-skills/references/react-three-fiber.md` | React Three Fiber implementation guide. |
+| `web-game-development-skills/references/alternative-3d-engines.md` | Comparison of alternative 3D engines such as Babylon.js and PlayCanvas. |
 
 ### 3D Stacks, Starters, and Performance
 
 | Document | Contents |
 | --- | --- |
-| `web-game-development-skills/web-game-development/references/threejs-stack.md` | Three.js stack recommendations. |
-| `web-game-development-skills/web-game-development/references/threejs-vanilla-starter.md` | vanilla Three.js starter structure. |
-| `web-game-development-skills/web-game-development/references/react-three-fiber-stack.md` | React Three Fiber stack recommendations. |
-| `web-game-development-skills/web-game-development/references/react-three-fiber-starter.md` | React Three Fiber starter structure. |
-| `web-game-development-skills/web-game-development/references/gltf-loading-starter.md` | GLB / glTF loading starter. |
-| `web-game-development-skills/web-game-development/references/rapier-integration-starter.md` | Rapier physics integration starter. |
-| `web-game-development-skills/web-game-development/references/webgl-debugging-and-performance.md` | WebGL debugging and performance guidance. |
+| `web-game-development-skills/references/threejs-stack.md` | Three.js stack recommendations. |
+| `web-game-development-skills/references/threejs-vanilla-starter.md` | vanilla Three.js starter structure. |
+| `web-game-development-skills/references/react-three-fiber-stack.md` | React Three Fiber stack recommendations. |
+| `web-game-development-skills/references/react-three-fiber-starter.md` | React Three Fiber starter structure. |
+| `web-game-development-skills/references/gltf-loading-starter.md` | GLB / glTF loading starter. |
+| `web-game-development-skills/references/rapier-integration-starter.md` | Rapier physics integration starter. |
+| `web-game-development-skills/references/webgl-debugging-and-performance.md` | WebGL debugging and performance guidance. |
 
 ### UI, Assets, and QA
 
 | Document | Contents |
 | --- | --- |
-| `web-game-development-skills/web-game-development/references/ui-frontend.md` | Game UI, HUDs, menus, and DOM overlays. |
-| `web-game-development-skills/web-game-development/references/frontend-prompts.md` | Frontend prompting patterns and visual direction. |
-| `web-game-development-skills/web-game-development/references/three-hud-layout-patterns.md` | Low-chrome 3D HUD layout patterns. |
-| `web-game-development-skills/web-game-development/references/sprite-workflow.md` | 2D sprite generation and normalization workflow. |
-| `web-game-development-skills/web-game-development/references/sprite-pipeline.md` | Detailed 2D sprite pipeline notes. |
-| `web-game-development-skills/web-game-development/references/asset-pipeline-3d.md` | Main guide for 3D asset shipping and optimization. |
-| `web-game-development-skills/web-game-development/references/web-3d-asset-pipeline.md` | Web 3D asset pipeline details. |
-| `web-game-development-skills/web-game-development/references/playtest.md` | Browser playtesting and screenshot-based QA workflow. |
-| `web-game-development-skills/web-game-development/references/playtest-checklist.md` | Playtest checklist. |
+| `web-game-development-skills/references/ui-frontend.md` | Game UI, HUDs, menus, and DOM overlays. |
+| `web-game-development-skills/references/frontend-prompts.md` | Frontend prompting patterns and visual direction. |
+| `web-game-development-skills/references/three-hud-layout-patterns.md` | Low-chrome 3D HUD layout patterns. |
+| `web-game-development-skills/references/sprite-workflow.md` | 2D sprite generation and normalization workflow. |
+| `web-game-development-skills/references/sprite-pipeline.md` | Detailed 2D sprite pipeline notes. |
+| `web-game-development-skills/references/asset-pipeline-3d.md` | Main guide for 3D asset shipping and optimization. |
+| `web-game-development-skills/references/web-3d-asset-pipeline.md` | Web 3D asset pipeline details. |
+| `web-game-development-skills/references/playtest.md` | Browser playtesting and screenshot-based QA workflow. |
+| `web-game-development-skills/references/playtest-checklist.md` | Playtest checklist. |
 
 ## 2D Sprite Helper Scripts
 
 Scripts are located at:
 
 ```text
-web-game-development-skills/web-game-development/scripts/
+web-game-development-skills/scripts/
 ```
 
 | Script | Purpose |
@@ -187,16 +172,16 @@ python3 -m pip install pillow
 Examples:
 
 ```bash
-python3 web-game-development-skills/web-game-development/scripts/build_sprite_edit_canvas.py \
+python3 web-game-development-skills/scripts/build_sprite_edit_canvas.py \
   --seed output/sprites/idle-01.png \
   --out output/sprites/edit-canvas.png
 
-python3 web-game-development-skills/web-game-development/scripts/normalize_sprite_strip.py \
+python3 web-game-development-skills/scripts/normalize_sprite_strip.py \
   --input output/sprites/raw-strip.png \
   --out-dir output/sprites/frames \
   --frames 4
 
-python3 web-game-development-skills/web-game-development/scripts/render_sprite_preview_sheet.py \
+python3 web-game-development-skills/scripts/render_sprite_preview_sheet.py \
   --frames-dir output/sprites/frames \
   --out output/sprites/preview.png
 ```
@@ -240,6 +225,10 @@ Playtest the browser game and report concrete issues with screenshots.
 - Use DOM overlays for HUDs and menus by default; let Canvas / WebGL focus on the playfield.
 - For 3D projects, lock units, origins, pivots, naming, collision proxies, LOD strategy, and lighting decisions early.
 - Before delivery, run real browser playtests, screenshot checks, performance checks, and responsive layout checks.
+
+## Acknowledgements
+
+The design and implementation of this Skill were inspired in part by OpenAI Codex's Game Studio plugin.
 
 ## License
 
