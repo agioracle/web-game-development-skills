@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Game Development"
+  short_description: "Design, build, and ship browser games end to end"
+  default_prompt: "Help me design and build a browser game: choose the stack, set up the architecture, implement the runtime and UI, prepare assets, and plan playtesting."
